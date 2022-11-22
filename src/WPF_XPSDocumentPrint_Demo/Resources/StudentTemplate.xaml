@@ -1,0 +1,150 @@
+﻿<FlowDocument
+    x:Class="wpf_xaml2pdf_demo.Resources.StudentTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ColumnWidth="1123"
+    FontFamily="宋体"
+    FontSize="14"
+    PageHeight="794"
+    PageWidth="1123"
+    mc:Ignorable="d">
+    <FlowDocument.Resources>
+        <Style x:Key="BorderedTable" TargetType="Table">
+            <Setter Property="CellSpacing" Value="0" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#000" />
+        </Style>
+        <Style x:Key="BorderedCell" TargetType="TableCell">
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="BorderBrush" Value="#000" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+    </FlowDocument.Resources>
+    <Table FontSize="25" Style="{StaticResource BorderedTable}">
+        <Table.Columns>
+            <TableColumn Width="784" />
+            <TableColumn Width="300" />
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell ColumnSpan="2" FontSize="40">
+                    <Paragraph Margin="30" TextAlignment="Center">
+                        学生成绩单
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell ColumnSpan="2">
+                    <Table
+                        Margin="20,20,20,0"
+                        FontSize="25"
+                        Style="{StaticResource BorderedTable}">
+                        <Table.Columns>
+                            <TableColumn Width="200" />
+                            <TableColumn />
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell ColumnSpan="2" Style="{StaticResource BorderedCell}">
+                                    <Paragraph FontSize="25" TextAlignment="Center">
+                                        学生成绩信息
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Right">
+                                        姓名
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph>
+                                        <Run Text="{Binding Name}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Right">
+                                        班级
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph>
+                                        <Run Text="{Binding Class}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Right">
+                                        语文成绩
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph>
+                                        <Run Text="{Binding Chinese}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Right">
+                                        数学成绩
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph>
+                                        <Run Text="{Binding Math}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Right">
+                                        英语成绩
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Style="{StaticResource BorderedCell}">
+                                    <Paragraph>
+                                        <Run Text="{Binding English}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell ColumnSpan="2">
+                    <Table
+                        Margin="20,0,20,20"
+                        FontSize="25"
+                        Style="{StaticResource BorderedTable}">
+                        <Table.Columns>
+                            <TableColumn />
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell ColumnSpan="2" Style="{StaticResource BorderedCell}">
+                                    <Paragraph FontSize="25" TextAlignment="Left">
+                                        班主任评语
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell ColumnSpan="2" Style="{StaticResource BorderedCell}">
+                                    <Paragraph TextAlignment="Center">
+                                        <Run Text="{Binding Comments}" />
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+</FlowDocument>
